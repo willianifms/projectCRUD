@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
+import CreateItem from "./components/CreateItem";
+
+import ReadItems from "./components/ReadItems";
+
+import UpdateItem from "./components/UpdateItem";
+
+import DeleteItem from "./components/DeleteItem";
+
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <nav className="bg-white shadow-lg">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex justify-between">
+              <div className="flex space-x-7">
+                <div>
+                  <Link to="/" className="flex items-center py-4 px-2">
+                    <span className="font-semibold text-gray-500 text-lg">
+                      CRUD App
+                    </span>
+                  </Link>
+                </div>
+              </div>
 
-export default App
+              <div className="flex items-center space-x-3">
+                <Link
+                  to="/"
+                  className="py-4 px-2 text-gray-500 hover:text-gray-900"
+                >
+                  Home
+                </Link>
+
+                <Link
+                  to="/create"
+                  className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
+                >
+                  Create Item
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div className="max-w-6xl mx-auto mt-8 px-4">
+          <Routes>
+            <Route path="/" element={<ReadItems />} />
+
+            <Route path="/create" element={<CreateItem />} />
+
+            <Route
+              path="/update/:id"
+              element={<UpdateItem id="" name="" description="" />}
+            />
+
+            <Route path="/delete/:id" element={<DeleteItem id="" />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
