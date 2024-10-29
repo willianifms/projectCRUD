@@ -1,13 +1,8 @@
 import React from "react";
-
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
 import CreateItem from "./components/CreateItem";
-
 import ReadItems from "./components/ReadItems";
-
 import UpdateItem from "./components/UpdateItem";
-
 import DeleteItem from "./components/DeleteItem";
 
 const App: React.FC = () => {
@@ -21,7 +16,7 @@ const App: React.FC = () => {
                 <div>
                   <Link to="/" className="flex items-center py-4 px-2">
                     <span className="font-semibold text-gray-500 text-lg">
-                      CRUD App
+                      CRUD 
                     </span>
                   </Link>
                 </div>
@@ -31,15 +26,14 @@ const App: React.FC = () => {
                 <Link
                   to="/"
                   className="py-4 px-2 text-gray-500 hover:text-gray-900"
-                >
+ >
                   Home
                 </Link>
-
                 <Link
                   to="/create"
                   className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
                 >
-                  Create Item
+                  adiciona Item
                 </Link>
               </div>
             </div>

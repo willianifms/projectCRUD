@@ -39,7 +39,7 @@ const CreateItem: React.FC = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="name"
           >
-            Item Name
+            nome
           </label>
 
           <input
@@ -58,7 +58,7 @@ const CreateItem: React.FC = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="description"
           >
-            Description
+            Descrição
           </label>
 
           <textarea
@@ -76,7 +76,7 @@ const CreateItem: React.FC = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Add Item
+            Adicionar
           </button>
         </div>
       </form>
