@@ -23,9 +23,9 @@ const CreateItem: React.FC = () => {
 
       setDescription("");
 
-      alert("Item added successfully!");
+      alert("Cadastrado com sucesso");
     } catch (error) {
-      console.error("Error adding item: ", error);
+      console.error("Error ao cadastrar item: ", error);
     }
   };
 

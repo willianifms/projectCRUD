@@ -1,9 +1,6 @@
 import React from "react";
-
 import { doc, deleteDoc } from "firebase/firestore";
-
 import { db } from "../firebase";
-
 import { useNavigate } from "react-router-dom";
 
 interface DeleteItemProps {
@@ -17,11 +14,11 @@ const DeleteItem: React.FC<DeleteItemProps> = ({ id }) => {
     try {
       await deleteDoc(doc(db, "items", id));
 
-      alert("Item deleted successfully!");
+      alert("Deletado com sucesso");
 
       navigate("/");
     } catch (error) {
-      console.error("Error deleting item: ", error);
+      console.error("Erro ao deletar ", error);
     }
   };
 
@@ -29,7 +26,7 @@ const DeleteItem: React.FC<DeleteItemProps> = ({ id }) => {
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <h2 className="text-2xl font-bold mb-4">Delete Item</h2>
 
-      <p className="mb-4">Are you sure you want to delete this item?</p>
+      <p className="mb-4">Tem certeza que quer deletar o item?</p>
 
       <button
         onClick={handleDelete}
