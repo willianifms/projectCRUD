@@ -16,7 +16,7 @@ const DeleteItem: React.FC<DeleteItemProps> = ({ id }) => {
 
       alert("Deletado com sucesso");
 
-      navigate("/");
+      navigate("/read");
     } catch (error) {
       console.error("Erro ao deletar ", error);
     }
